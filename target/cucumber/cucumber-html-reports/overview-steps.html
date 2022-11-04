@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>04 Nov 2022, 13:45</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.upgenix.stepDefinitions.Hooks.scenarioSetup()</td>
+              <td>3</td>
+              <td class="duration" data-value="5825786733">5.825</td>
+              <td class="duration" data-value="5825786733">8.075</td>
+              <td class="duration" data-value="17477360200">17.477</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.upgenix.stepDefinitions.Hooks.teardownScenario(io.cucumber.java.Scenario)</td>
+              <td>3</td>
+              <td class="duration" data-value="210237966">0.210</td>
+              <td class="duration" data-value="210237966">0.244</td>
+              <td class="duration" data-value="630713900">0.630</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.upgenix.stepDefinitions.LogoutStepDefinitions.user_clicks_on_account_name()</td>
+              <td>2</td>
+              <td class="duration" data-value="1374018000">1.374</td>
+              <td class="duration" data-value="1374018000">1.951</td>
+              <td class="duration" data-value="2748036000">2.748</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.upgenix.stepDefinitions.LogoutStepDefinitions.user_clicks_on_log_out()</td>
+              <td>2</td>
+              <td class="duration" data-value="1135547700">1.135</td>
+              <td class="duration" data-value="1135547700">1.141</td>
+              <td class="duration" data-value="2271095400">2.271</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.upgenix.stepDefinitions.LogoutStepDefinitions.user_close_the_all_opened_tab_s()</td>
+              <td>1</td>
+              <td class="duration" data-value="290820400">0.290</td>
+              <td class="duration" data-value="290820400">0.290</td>
+              <td class="duration" data-value="290820400">0.290</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.upgenix.stepDefinitions.LogoutStepDefinitions.user_copy_the_url()</td>
+              <td>1</td>
+              <td class="duration" data-value="3105866500">3.105</td>
+              <td class="duration" data-value="3105866500">3.105</td>
+              <td class="duration" data-value="3105866500">3.105</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.upgenix.stepDefinitions.LogoutStepDefinitions.user_is_on_user_home_page()</td>
+              <td>3</td>
+              <td class="duration" data-value="4028743200">4.028</td>
+              <td class="duration" data-value="4028743200">4.085</td>
+              <td class="duration" data-value="12086229600">12.086</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.upgenix.stepDefinitions.LogoutStepDefinitions.user_navigate_to_back()</td>
+              <td>1</td>
+              <td class="duration" data-value="262835500">0.262</td>
+              <td class="duration" data-value="262835500">0.262</td>
+              <td class="duration" data-value="262835500">0.262</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.upgenix.stepDefinitions.LogoutStepDefinitions.user_open_a_new_browser_and_get_to_the_copied_url()</td>
+              <td>1</td>
+              <td class="duration" data-value="6911004300">6.911</td>
+              <td class="duration" data-value="6911004300">6.911</td>
+              <td class="duration" data-value="6911004300">6.911</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.upgenix.stepDefinitions.LogoutStepDefinitions.user_shouldn_t_see_the_title_is(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="5152326600">5.152</td>
+              <td class="duration" data-value="5152326600">5.152</td>
+              <td class="duration" data-value="5152326600">5.152</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.upgenix.stepDefinitions.LogoutStepDefinitions.user_verify_that_the_message_shown(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="777079700">0.777</td>
+              <td class="duration" data-value="777079700">0.777</td>
+              <td class="duration" data-value="777079700">0.777</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.upgenix.stepDefinitions.LogoutStepDefinitions.user_verify_that_the_title_is(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="12494200">0.012</td>
+              <td class="duration" data-value="12494200">0.016</td>
+              <td class="duration" data-value="24988400">0.024</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>12</td>
+            <td>21</td>
+            <td class="duration">2.463</td>
+            <td class="duration">17.477</td>
+            <td class="duration">51.738</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
